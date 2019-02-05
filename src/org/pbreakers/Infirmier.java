@@ -1,4 +1,4 @@
 package org.pbreakers;
 
-public class Infirmier {
+public class Infirmier extends Personnel {
 }
