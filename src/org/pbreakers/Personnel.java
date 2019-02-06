@@ -52,7 +52,7 @@ abstract class Personnel implements PersonnelInterface{
         return matricule;
     }
 
-    public void setMatricule(String matricule) {
+    private void setMatricule(String matricule) {
         this.matricule = matricule;
     }
 }
