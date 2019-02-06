@@ -3,6 +3,7 @@ package org.pbreakers;
 import java.util.*;
 
 public class Ordonnance {
+
     private Fiche fiche;
     private Docteur medecin;
     private Date date;
@@ -122,6 +123,7 @@ public class Ordonnance {
             return null;
         }
     };
+
     Ordonnance(Fiche fiche, Docteur doc){
         this.fiche = fiche;
         this.medecin = doc;
