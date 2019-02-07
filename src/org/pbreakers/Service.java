@@ -137,12 +137,8 @@ public class Service {
         return nom;
     }
 
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
     Service(String nom){
-        this.setNom(nom);
+        this.nom = nom;
     }
 
 }
