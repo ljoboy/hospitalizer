@@ -1,5 +1,7 @@
 package org.pbreakers;
 
+import com.sun.istack.internal.Nullable;
+
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
@@ -8,7 +10,7 @@ import java.util.ListIterator;
 public class Chambre {
 
     private String  numero;
-    private int nbLit;
+    private @Nullable int nbLit;
     private List<Patient> patients = new List<Patient>() {
         @Override
         public int size() {
@@ -126,8 +128,9 @@ public class Chambre {
         }
     };
 
-    Chambre(String numero){
+    Chambre(String numero, @Nullable int nbLit){
         this.numero = numero;
+        this.nbLit = nbLit;
     }
     public int getNbLit() {
         return nbLit;
