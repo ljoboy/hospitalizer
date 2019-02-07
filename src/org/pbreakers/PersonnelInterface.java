@@ -1,4 +1,4 @@
 package org.pbreakers;
 
-public interface PersonnelInterface {
+interface PersonnelInterface {
 }
