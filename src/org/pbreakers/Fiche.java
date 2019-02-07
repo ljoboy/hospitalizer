@@ -137,10 +137,6 @@ class Fiche {
         return numero;
     }
 
-    private void setNumero() {
-
-    }
-
     public Patient getPatient() {
         return patient;
     }
