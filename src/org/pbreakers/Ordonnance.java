@@ -2,7 +2,7 @@ package org.pbreakers;
 
 import java.util.*;
 
-public class Ordonnance {
+class Ordonnance {
 
     private Fiche fiche;
     private Docteur medecin;

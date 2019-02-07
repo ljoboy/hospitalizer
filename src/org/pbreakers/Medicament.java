@@ -1,4 +1,4 @@
 package org.pbreakers;
 
-public class Medicament {
+class Medicament {
 }
