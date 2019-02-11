@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Service {
+public class Service implements Affichable{
 
     private String nom;
     List<Personnel> agents = new List<Personnel>() {
@@ -141,4 +141,8 @@ public class Service {
         this.nom = nom;
     }
 
+    @Override
+    public void afficher() {
+        System.out.println("Nom : "+this.nom);
+    }
 }
