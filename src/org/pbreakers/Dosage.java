@@ -1,6 +1,6 @@
 package org.pbreakers;
 
-class Dosage {
+class Dosage implements Affichable {
     private int nbJour;
     private int nbComprime;
     private int agePatient;
@@ -40,5 +40,10 @@ class Dosage {
 
     public void setNbJour(int nbJour) {
         this.nbJour = nbJour;
+    }
+
+    @Override
+    public void afficher() {
+        System.out.println("Age du patient : "+this.getAgePatient()+" nombre des comprimes :"+this.nbComprime+" nombre de fois/jour : "+this.nbFois+" nombres de jours : "+this.nbJour);
     }
 }
