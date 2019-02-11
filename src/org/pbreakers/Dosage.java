@@ -25,4 +25,20 @@ class Dosage {
     public int getNbJour() {
         return nbJour;
     }
+
+    public void setAgePatient(int agePatient) {
+        this.agePatient = agePatient;
+    }
+
+    public void setNbComprime(int nbComprime) {
+        this.nbComprime = nbComprime;
+    }
+
+    public void setNbFois(int nbFois) {
+        this.nbFois = nbFois;
+    }
+
+    public void setNbJour(int nbJour) {
+        this.nbJour = nbJour;
+    }
 }
