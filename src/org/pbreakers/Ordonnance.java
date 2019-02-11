@@ -4,8 +4,10 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.*;
 
-class Ordonnance {
+class Ordonnance implements Affichable {
 
+    private static int nb = 0;
+    private int num = nb;
     private Fiche fiche;
     private Docteur medecin;
     private Date date;
@@ -135,5 +137,19 @@ class Ordonnance {
         this.fiche = fiche;
         this.medecin = doc;
         date = new Date();
+        nb++;
     }
+
+    @Override
+    public void afficher() {
+        System.out.println("Ordonnance n°"+this.num+" Pour : "+fiche.getPatient().getNom()+" "+fiche.getPatient().getPrenom()+" Par : Dr. "+medecin.getNom()+" "+medecin.getPrenom());
+        for (Medicament medicament : medicaments){
+            medicament.afficher();
+        }
+    }
+
+    public static int getNb() {
+        return nb;
+    }
+
 }
