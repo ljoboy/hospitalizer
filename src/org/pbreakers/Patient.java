@@ -2,7 +2,8 @@ package org.pbreakers;
 
 public class Patient {
     private String nom, postnom, prenom, sexe;
-    private int poids;private int age;
+    private int poids;
+    private int age;
 
     Patient(String nom, String postnom, String prenom){
         this.setNom(nom);
@@ -50,4 +51,11 @@ public class Patient {
         this.age = age;
     }
 
+    public String getSexe() {
+        return sexe;
+    }
+
+    public void setSexe(String sexe) {
+        this.sexe = sexe;
+    }
 }
