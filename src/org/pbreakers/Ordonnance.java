@@ -1,5 +1,7 @@
 package org.pbreakers;
 
+import org.jetbrains.annotations.Nullable;
+
 import java.util.*;
 
 class Ordonnance {
@@ -8,6 +10,9 @@ class Ordonnance {
     private Docteur medecin;
     private Date date;
     List<Medicament> medicaments = new List<Medicament>() {
+        private int fromIndex;
+        private int toIndex;
+
         @Override
         public int size() {
             return 0;
@@ -120,6 +125,8 @@ class Ordonnance {
 
         @Override
         public List<Medicament> subList(int fromIndex, int toIndex) {
+            this.fromIndex = fromIndex;
+            this.toIndex = toIndex;
             return null;
         }
     };
