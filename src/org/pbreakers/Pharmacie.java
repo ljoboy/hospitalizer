@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Pharmacie {
+class Pharmacie implements  Affichable{
     List<Medicament> medicaments = new List<Medicament>() {
         @Override
         public int size() {
@@ -252,4 +252,11 @@ public class Pharmacie {
             return null;
         }
     };
+
+    @Override
+    public void afficher() {
+        for (Medicament medicament : medicaments){
+            medicament.afficher();
+        }
+    }
 }
