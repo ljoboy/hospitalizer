@@ -7,11 +7,10 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-public class Chambre {
-
-    private String  numero;
+public class Chambre implements Affichable{
+    static private int  numero = 0;
     private @Nullable int nbLit;
-    private List<Patient> patients = new List<Patient>() {
+    List<Patient> patients = new List<Patient>() {
         @Override
         public int size() {
             return 0;
@@ -128,10 +127,15 @@ public class Chambre {
         }
     };
 
-    Chambre(String numero, @Nullable int nbLit){
-        this.numero = numero;
+    Chambre(@Nullable int nbLit){
+        Chambre.numero++;
         this.nbLit = nbLit;
     }
+
+    Chambre(){
+        Chambre.numero++;
+    }
+
     public int getNbLit() {
         return nbLit;
     }
@@ -140,7 +144,11 @@ public class Chambre {
         this.nbLit = nbLit;
     }
 
-    public String getNumero() {
+    public int getNumero() {
         return numero;
+    }
+
+    public void afficher() {
+        System.out.println("Chambre N°"+this.getNumero());
     }
 }
