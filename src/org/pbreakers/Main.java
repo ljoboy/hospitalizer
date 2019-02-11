@@ -1623,7 +1623,7 @@ public class Main {
             if (choix.equals("1") || choix.equals("2") || choix.equals("3") || choix.equals("4") || choix.equals("5") || choix.equals("6") || choix.equals("7") ||
                     choix.equals("8") || choix.equals("9") || choix.equals("10") || choix.equals("11") || choix.equals("12") || choix.equals("13")) {
                 int sous_choix = sous_menu();
-                int ch = sc.nextInt();
+                int ch = Integer.parseInt(choix);
                 execute(ch, sous_choix);
             }else if (choix.equals("0")){
                 System.out.println("Aurevoir !");
@@ -1644,10 +1644,11 @@ public class Main {
             System.out.println("3. Lister");
             System.out.println("4. Chercher");
             System.out.println("0. Menu principal");
+            System.out.print("==>");
             Scanner sc = new Scanner(System.in);
             String ch = sc.nextLine();
             if (ch.equals("0") || ch.equals("1") || ch.equals("2") || ch.equals("3") ||ch.equals("4")){
-                sm = sc.nextInt();
+                sm = Integer.parseInt(ch);
             }else{
                 System.out.println("Veuillez entrer un nombre valide");
                 sm = -1;
@@ -1660,6 +1661,7 @@ public class Main {
         if (menu == 1){
             if (sous_menu == 1){
                 chambres.add(new Chambre());
+                System.out.println("Ajout efectuer avec succes");
             }else if (sous_menu == 2) {
                 System.out.println("0. Pour quitter");
                 execute(menu, 3);
