@@ -1,6 +1,6 @@
 package org.pbreakers;
 
-public class Patient {
+public class Patient implements Affichable {
     private String nom, postnom, prenom, sexe;
     private int poids;
     private int age;
@@ -57,5 +57,10 @@ public class Patient {
 
     public void setSexe(String sexe) {
         this.sexe = sexe;
+    }
+
+    @Override
+    public void afficher() {
+        System.out.println(this.getNom()+" "+this.getPostnom()+" "+this.getPrenom());
     }
 }
