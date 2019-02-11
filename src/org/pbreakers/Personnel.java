@@ -55,4 +55,9 @@ abstract class Personnel implements PersonnelInterface{
     private void setMatricule(String matricule) {
         this.matricule = matricule;
     }
+
+    @Override
+    public void afficher() {
+        System.out.println(this.getNom()+" "+this.getPostnom()+" "+this.getPrenom());
+    }
 }

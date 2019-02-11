@@ -1,4 +1,4 @@
 package org.pbreakers;
 
-interface PersonnelInterface {
+interface PersonnelInterface extends Affichable {
 }
