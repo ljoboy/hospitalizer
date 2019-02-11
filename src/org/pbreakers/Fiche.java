@@ -7,7 +7,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.ListIterator;
 
-class Fiche {
+class Fiche implements Affichable{
 
     private Patient patient;
     private String numero;
@@ -139,5 +139,10 @@ class Fiche {
 
     public Patient getPatient() {
         return patient;
+    }
+
+    @Override
+    public void afficher() {
+        System.out.println("Fiche n°"+this.getNumero()+" Nom du patient : "+this.patient.getNom()+" "+this.patient.getPostnom()+" "+this.patient.getPrenom());
     }
 }
