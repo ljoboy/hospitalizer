@@ -1593,7 +1593,33 @@ public class Main {
     };
 
     public static void main(String[] args) {
-
+        boolean bool = true;
+        Scanner sc = new Scanner(System.in);
+        System.out.flush();
+        while (bool){
+            System.out.println("1. CRUD MENU");
+            System.out.println("2. Receptioniste");
+            System.out.println("3. Medecin");
+            System.out.println("0. Pour quitter");
+            String choix = sc.nextLine();
+            switch (choix) {
+                case "0":
+                    bool = false;
+                    System.out.println("Aurevoir !");
+                    break;
+                case "1":
+                    crud_menu();
+                    break;
+                case "2":
+                    menu_recep();
+                    break;
+                case "3":
+                    menu_doc();
+                    break;
+                default:
+                    System.out.println("Veuillez operer un choix valide");
+            }
+        }
     }
 
     private static void crud_menu(){
@@ -1607,7 +1633,7 @@ public class Main {
             System.out.println("1. Chambre");
             System.out.println("2. Consultation");
             System.out.println("3. Docteur");
-            System.out.println("4. Dosage");
+//            System.out.println("4. Dosage");
             System.out.println("5. Fiche");
             System.out.println("6. Infirmier");
             System.out.println("7. Medicament");
@@ -1659,6 +1685,7 @@ public class Main {
     }
 
     private static void execute(int menu, int sous_menu){
+        Scanner sc = new Scanner(System.in);
         if (menu == 1){
             if (sous_menu == 1){
                 chambres.add(new Chambre());
@@ -1668,7 +1695,6 @@ public class Main {
                 execute(menu, 3);
                 System.out.println("Veuillez selectionner l'element a supprimer");
                 System.out.print("=>");
-                Scanner sc = new Scanner(System.in);
                 int el = sc.nextInt();
                 if (el != 0){
                     System.out.print("Voulez-vous vraiment supprimer cet element ? (O|N)\n==>");
@@ -1687,19 +1713,69 @@ public class Main {
                 }
             }else if (sous_menu == 4){
                 System.out.print("Tapez le numero de la chambre a rechercher\n==>");
-                Scanner scanner = new Scanner(System.in);
-                int nb = scanner.nextInt();
+                int nb = sc.nextInt();
                 if (nb<chambres.size() && nb>0){
                     chambres.get(nb).afficher();
                 }else{
                     System.out.println("Element inexistant ou non trouver");
                 }
             }
+        }else if(menu == 2){
+            if (sous_menu == 1){
+                consultations.add(new Consultation(new Docteur("Yombo","Jo","Boss")));
+                System.out.println("Ajouter avec succes");
+            }else if (sous_menu == 2){
+                //Supprimer
+            }else if (sous_menu == 3){
+                for (Consultation consultation : consultations){
+                    consultation.afficher();
+                }
+            }else if (sous_menu == 4){
+                // Chercher
+            }
+        }else if (menu == 3){
+            if (sous_menu == 1){
+                String p,nom,pnom;
+                System.out.println("Nom :");
+                nom = sc.nextLine();
+                System.out.println("Postnom :");
+                pnom = sc.nextLine();
+                System.out.println("Prenom :");
+                p = sc.nextLine();
+                docteurs.add(new Docteur(nom, pnom, p));
+            }else if (sous_menu == 2){
+                // Supprimer
+            }else if (sous_menu == 3){
+                for (Docteur docteur : docteurs){
+                    docteur.afficher();
+                }
+            }else if (sous_menu == 4){
+                // Checher
+            }
+        }else if (menu == 5){
+            if (sous_menu == 1){
+                String nomp,pnomp;
+                System.out.println("Nom :");
+                String prnom = sc.nextLine();
+                System.out.println("Postnom :");
+                pnomp = sc.nextLine();
+                System.out.println("Prenom :");
+                nomp = sc.nextLine();
+                fiches.add(new Fiche(new Patient(nomp, pnomp, prnom)));
+            }else if (sous_menu == 2){
+                // Supprimer
+            }else if (sous_menu == 3){
+                for (Patient patient : patients){
+                    patient.afficher();
+                }
+            }else{
+                // Checher
+            }
         }
     }
 
     static void menu_recep(){
-        Scanner sc;
+        Scanner sc = new Scanner(System.in);
         System.out.flush();
         System.out.println("RECEPTIONISTE HOSPITALIZER : ");
         System.out.println("1. Ajouter un patient");
@@ -1710,7 +1786,6 @@ public class Main {
         String choix;
         do {
             System.out.print("==>");
-            sc = new Scanner(System.in);
             choix = sc.nextLine();
         }while (!(choix.equals("0") || choix.equals("1") || choix.equals("2") || choix.equals("3") || choix.equals("4")));
         switch (choix){
@@ -1723,19 +1798,72 @@ public class Main {
             case "3":
                 System.out.println("Veuillez selectionner une fiche svp :");
                 execute(5,3);
-                Scanner f = new Scanner(System.in);
                 System.out.print("==>");
+                int f = sc.nextInt();
                 System.out.println("Veuillez selectionner un medecin : ");
                 execute(3,3);
                 System.out.println("==>");
-                Scanner m = new Scanner(System.in);
-                fiches.get(f.nextInt()-1).consultations.add(new Consultation(docteurs.get(m.nextInt())));
+                int m = sc.nextInt();
+                fiches.get(f-1).consultations.add(new Consultation(docteurs.get(m-1)));
                 break;
             case "4":
                 execute(5,4);
                 break;
+            case "0":
+                System.out.flush();
+                break;
             default:
                 System.out.println("Comment es-tu arriver ici ?");
+        }
+    }
+
+    static void menu_doc(){
+        System.out.flush();
+        int f;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Choisissez le medecin");
+        execute(3,3);
+        int d = sc.nextInt();
+        Docteur m = docteurs.get(d-1);
+        System.out.flush();
+        String choix;
+        do {
+            System.out.println("1. Consulter un malade");
+            System.out.println("2. Prescrire des medicaments");
+            System.out.println("0. Quitter");
+            System.out.print("==>");
+            choix = sc.nextLine();
+        }while (!(choix.equals("0") || choix.equals("1") || choix.equals("2")));
+        execute(5,3);
+        System.out.print("==>");
+        f = sc.nextInt();
+        Fiche fiche = fiches.get(f-1);
+        switch (choix){
+            case "1":
+                fiche.consultations.add(new Consultation(m));
+                System.out.println("Action reussi !");
+                break;
+            case "2":
+                Ordonnance ordonnance = new Ordonnance(fiche, m);
+                boolean b = true;
+                while (b){
+                    System.out.println("Ajouter un medicament a l'ordonnance");
+                    System.out.println("0. Pour quitter");
+                    System.out.print("==>");
+                    String med = sc.nextLine();
+                    if (med.equals("0")){
+                        b = false;
+                    }else{
+                        ordonnance.medicaments.add(new Medicament(med));
+                    }
+                }
+                ordonnances.add(ordonnance);
+                break;
+            case "0":
+                System.out.flush();
+                break;
+            default:
+                System.out.println("Wow ! Tu es vraiment un bon");
         }
     }
 }

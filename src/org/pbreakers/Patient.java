@@ -1,6 +1,6 @@
 package org.pbreakers;
 
-public class Patient extends Personne implements Affichable {
+public class Patient extends Personne {
     private int poids;
     private int age;
     private String sexe;

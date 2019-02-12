@@ -1,6 +1,6 @@
 package org.pbreakers;
 
-abstract class Personnel extends Personne implements PersonnelInterface{
+abstract class Personnel extends Personne {
     static private int nb = 0;
     private String matricule;
     Personnel(String nom, String postnom, String prenom) {
