@@ -1,38 +1,12 @@
 package org.pbreakers;
 
-public class Patient implements Affichable {
-    private String nom, postnom, prenom, sexe;
+public class Patient extends Personne implements Affichable {
     private int poids;
     private int age;
+    private String sexe;
 
     Patient(String nom, String postnom, String prenom){
-        this.setNom(nom);
-        this.setPostnom(postnom);
-        this.setPrenom(prenom);
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
-
-    public String getPostnom() {
-        return postnom;
-    }
-
-    public void setPostnom(String postnom) {
-        this.postnom = postnom;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
-        this.prenom = prenom;
+        super(nom, postnom, prenom);
     }
 
     public int getPoids() {
@@ -57,10 +31,5 @@ public class Patient implements Affichable {
 
     public void setSexe(String sexe) {
         this.sexe = sexe;
-    }
-
-    @Override
-    public void afficher() {
-        System.out.println(this.getNom()+" "+this.getPostnom()+" "+this.getPrenom());
     }
 }
