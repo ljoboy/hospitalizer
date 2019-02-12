@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>org.pbreakers</OriginalElement>
+  <nodes>
+    <node x="1129.265625" y="231.0">org.pbreakers.Pharmacie</node>
+    <node x="0.0" y="883.0">org.pbreakers.Main</node>
+    <node x="2089.265625" y="187.0">org.pbreakers.Medicament</node>
+    <node x="694.0" y="776.0">org.pbreakers.Infirmier</node>
+    <node x="140.0" y="776.0">org.pbreakers.Pharmacien</node>
+    <node x="434.0" y="765.0">org.pbreakers.Docteur</node>
+    <node x="862.265625" y="198.0">org.pbreakers.Fiche</node>
+    <node x="427.265625" y="154.0">org.pbreakers.Personne</node>
+    <node x="1657.265625" y="187.0">org.pbreakers.Chambre</node>
+    <node x="1393.265625" y="176.0">org.pbreakers.Ordonnance</node>
+    <node x="1435.25" y="0.0">org.pbreakers.Affichable</node>
+    <node x="1863.265625" y="121.0">org.pbreakers.Dosage</node>
+    <node x="319.3125" y="531.0">org.pbreakers.Personnel</node>
+    <node x="2288.265625" y="198.0">org.pbreakers.Consultation</node>
+    <node x="540.3125" y="487.0">org.pbreakers.Patient</node>
+    <node x="648.265625" y="220.0">org.pbreakers.Service</node>
+    <node x="0.0" y="787.0">org.pbreakers.Receptioniste</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="org.pbreakers.Pharmacien" target="org.pbreakers.Personnel">
+      <point x="0.0" y="-25.5" />
+      <point x="277.0" y="745.0" />
+      <point x="394.6875" y="745.0" />
+      <point x="-25.125" y="70.0" />
+    </edge>
+    <edge source="org.pbreakers.Dosage" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-158.0" />
+      <point x="1966.265625" y="91.0" />
+      <point x="1539.25" y="91.0" />
+      <point x="32.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Medicament" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-92.0" />
+      <point x="2178.765625" y="81.0" />
+      <point x="1555.25" y="81.0" />
+      <point x="48.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Personne" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-125.0" />
+      <point x="527.765625" y="71.0" />
+      <point x="1443.25" y="71.0" />
+      <point x="-64.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Ordonnance" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-103.0" />
+      <point x="1515.265625" y="101.0" />
+      <point x="1507.25" y="101.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Service" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-59.0" />
+      <point x="745.265625" y="81.0" />
+      <point x="1459.25" y="81.0" />
+      <point x="-48.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Fiche" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-81.0" />
+      <point x="985.765625" y="91.0" />
+      <point x="1475.25" y="91.0" />
+      <point x="-32.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Infirmier" target="org.pbreakers.Personnel">
+      <point x="0.0" y="-25.5" />
+      <point x="836.5" y="735.0" />
+      <point x="495.1875" y="735.0" />
+      <point x="75.375" y="70.0" />
+    </edge>
+    <edge source="org.pbreakers.Patient" target="org.pbreakers.Personne">
+      <point x="0.0" y="-114.0" />
+      <point x="628.3125" y="462.0" />
+      <point x="578.015625" y="462.0" />
+      <point x="50.25" y="125.0" />
+    </edge>
+    <edge source="org.pbreakers.Chambre" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-92.0" />
+      <point x="1750.265625" y="101.0" />
+      <point x="1523.25" y="101.0" />
+      <point x="16.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Personnel" target="org.pbreakers.Personne">
+      <point x="0.0" y="-70.0" />
+      <point x="419.8125" y="462.0" />
+      <point x="477.515625" y="462.0" />
+      <point x="-50.25" y="125.0" />
+    </edge>
+    <edge source="org.pbreakers.Receptioniste" target="org.pbreakers.Personnel">
+      <point x="0.0" y="-14.5" />
+      <point x="60.0" y="735.0" />
+      <point x="344.4375" y="735.0" />
+      <point x="-75.375" y="70.0" />
+    </edge>
+    <edge source="org.pbreakers.Docteur" target="org.pbreakers.Personnel">
+      <point x="0.0" y="-36.5" />
+      <point x="554.0" y="745.0" />
+      <point x="444.9375" y="745.0" />
+      <point x="25.125" y="70.0" />
+    </edge>
+    <edge source="org.pbreakers.Consultation" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-81.0" />
+      <point x="2370.265625" y="71.0" />
+      <point x="1571.25" y="71.0" />
+      <point x="64.0" y="25.5" />
+    </edge>
+    <edge source="org.pbreakers.Pharmacie" target="org.pbreakers.Affichable">
+      <point x="0.0" y="-48.0" />
+      <point x="1251.265625" y="101.0" />
+      <point x="1491.25" y="101.0" />
+      <point x="-16.0" y="25.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.5598811292719169" x="1005.6268807231469" y="540.1876880117362" />
+  <SelectedNodes>
+    <node>org.pbreakers.Receptioniste</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
