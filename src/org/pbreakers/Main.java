@@ -1593,12 +1593,13 @@ public class Main {
     };
 
     public static void main(String[] args) {
-        menu();
+
     }
 
-    private static void menu(){
+    private static void crud_menu(){
         boolean m = true;
         do {
+            System.out.flush();
             System.out.println("====================================================================");
             System.out.println("===============      BIENVENUE CHEZ HOSPITALIZER      ==============");
             System.out.println("====================================================================");
@@ -1694,6 +1695,47 @@ public class Main {
                     System.out.println("Element inexistant ou non trouver");
                 }
             }
+        }
+    }
+
+    static void menu_recep(){
+        Scanner sc;
+        System.out.flush();
+        System.out.println("RECEPTIONISTE HOSPITALIZER : ");
+        System.out.println("1. Ajouter un patient");
+        System.out.println("2. Ajouter une fiche");
+        System.out.println("3. Ajouter un rendez-vous");
+        System.out.println("4. Rechercher une fiche");
+        System.out.println("0. Pour quitter");
+        String choix;
+        do {
+            System.out.print("==>");
+            sc = new Scanner(System.in);
+            choix = sc.nextLine();
+        }while (!(choix.equals("0") || choix.equals("1") || choix.equals("2") || choix.equals("3") || choix.equals("4")));
+        switch (choix){
+            case "1":
+                execute(9,1);
+                break;
+            case "2":
+                execute(5,1);
+                break;
+            case "3":
+                System.out.println("Veuillez selectionner une fiche svp :");
+                execute(5,3);
+                Scanner f = new Scanner(System.in);
+                System.out.print("==>");
+                System.out.println("Veuillez selectionner un medecin : ");
+                execute(3,3);
+                System.out.println("==>");
+                Scanner m = new Scanner(System.in);
+                fiches.get(f.nextInt()-1).consultations.add(new Consultation(docteurs.get(m.nextInt())));
+                break;
+            case "4":
+                execute(5,4);
+                break;
+            default:
+                System.out.println("Comment es-tu arriver ici ?");
         }
     }
 }
