@@ -1772,6 +1772,19 @@ public class Main {
             }else{
                 // Checher
             }
+        }else if (menu == 9){
+            if (sous_menu == 1){
+                System.out.println("Nom :");
+                String n = sc.nextLine();
+                System.out.println("Postnom :");
+                String pn = sc.nextLine();
+                String  p = sc.nextLine();
+                patients.add(new Patient(n,pn,p));
+            }else if (sous_menu == 3){
+                for (Patient patient : patients){
+                    patient.afficher();
+                }
+            }
         }
     }
 
